@@ -1,11 +1,12 @@
 package com.example;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @FunctionalInterface
-interface Function {
-    void apply();
+interface FormatterFunction<T> {
+    String apply(T value);
 }
 
 interface CustomList<T> {
@@ -17,7 +18,7 @@ interface CustomList<T> {
 
     public int size();
 
-    public String toString(Function formatter);
+    public String toString(FormatterFunction<T> formatter);
 }
 
 public class LinkedList<T> implements CustomList<T> {
@@ -26,7 +27,7 @@ public class LinkedList<T> implements CustomList<T> {
 
     public LinkedList() {
         this.length = 0;
-        this.head = null;
+        this.head = Optional.empty();
     }
 
     public LinkedList(T[] array) {
@@ -53,7 +54,24 @@ public class LinkedList<T> implements CustomList<T> {
     }
 
     public void add(T value) {
-        return;
+        LinkedListNode<T> newNode = new LinkedListNode<>();
+        newNode.value = value;
+        newNode.next = Optional.empty();
+
+        if (this.head.isEmpty()) {
+            this.head = Optional.of(newNode);
+        } else {
+            Optional<LinkedListNode<T>> lastNode = this.head;
+            while (lastNode.isPresent()) {
+                if (lastNode.get().next.isEmpty()) {
+                    break;
+                } else {
+                    lastNode = lastNode.get().next;
+                }
+            }
+            lastNode.get().next = Optional.of(newNode);
+        }
+        this.length++;
     }
 
     public Optional<T> remove(int index) {
@@ -85,8 +103,15 @@ public class LinkedList<T> implements CustomList<T> {
         return this.length;
     }
 
-    public String toString(Function formatter) {
-        return "";
+    @Override
+    public String toString(FormatterFunction<T> formatter) {
+        ArrayList<String> elems = new ArrayList<>();
+        Optional<LinkedListNode<T>> lastNode = this.head;
+        while (lastNode.isPresent()) {
+            elems.add(formatter.apply(lastNode.get().value));
+            lastNode = lastNode.get().next;
+        }
+        return "[" + String.join(",", elems) + "]";
     }
 }
 

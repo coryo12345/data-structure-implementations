@@ -9,5 +9,9 @@ public class App {
         System.out.println("Hello World!");
 
         LinkedList<String> list = new LinkedList<>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        System.out.println(list.toString((String value) -> value));
     }
 }

@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "linkedlist.h": "c"
+  },
+  "java.project.sourcePaths": ["java/src/main/java"]
+}

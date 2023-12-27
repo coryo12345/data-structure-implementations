@@ -1,0 +1,17 @@
+{
+  "name": "linkedlist",
+  "module": "linkedlist.ts",
+  "type": "module",
+  "scripts": {
+    "lint": "prettier . --write"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "prettier": "^3.1.1"
+  }
+}

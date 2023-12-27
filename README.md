@@ -10,12 +10,16 @@ Implementing Linked Lists in a different languages.
 - JavaScript
 - Python
 
-### To Implement
+### Partially Implemented
 
 - Java
-- C++
 - C
 - Rust
+
+### To Implement
+
+- C++
+- PHP
 
 ## Requirements
 

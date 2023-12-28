@@ -11,13 +11,9 @@ interface FormatterFunction<T> {
 
 interface CustomList<T> {
     public Optional<T> get(int index);
-
     public void add(T value);
-
     public Optional<T> remove(int index);
-
     public int size();
-
     public String toString(FormatterFunction<T> formatter);
 }
 
@@ -32,12 +28,16 @@ public class LinkedList<T> implements CustomList<T> {
 
     public LinkedList(T[] array) {
         this();
-        // TODO
+        for (T elem : array) {
+            this.add(elem);
+        }
     }
 
     public LinkedList(List<T> list) {
         this();
-        // TODO
+        for (T value : list) {
+            this.add(value);
+        }
     }
 
     public Optional<T> get(int index) {
@@ -77,7 +77,7 @@ public class LinkedList<T> implements CustomList<T> {
     public Optional<T> remove(int index) {
         Optional<LinkedListNode<T>> prevNode = Optional.empty();
         Optional<LinkedListNode<T>> node = this.head;
-        Optional<T> valueToReturn = Optional.empty();
+        Optional<T> valueToReturn;
 
         for (int pos = 1; pos <= index; pos++) {
             if (node.isEmpty() || (node.get().next.isEmpty() && pos == index)) {

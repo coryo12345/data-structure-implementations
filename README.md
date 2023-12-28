@@ -9,15 +9,12 @@ Implementing Linked Lists in a different languages.
 - Go
 - JavaScript
 - Python
-
-### Partially Implemented
-
 - Java
-- C
-- Rust
 
 ### To Implement
 
+- C
+- Rust
 - C++
 - PHP
 

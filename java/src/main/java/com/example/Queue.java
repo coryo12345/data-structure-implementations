@@ -44,7 +44,7 @@ public class Queue<T> implements IQueue<T> {
         if (this.values.isEmpty()) {
             return Optional.empty();
         } else {
-            return Optional.of(this.values.remove(this.values.size() - 1));
+            return Optional.of(this.values.remove(0));
         }
     }
 
@@ -52,7 +52,7 @@ public class Queue<T> implements IQueue<T> {
         if (this.values.isEmpty()) {
             return Optional.empty();
         } else {
-            return Optional.of(this.values.get(this.values.size() - 1));
+            return Optional.of(this.values.get(0));
         }
     }
 

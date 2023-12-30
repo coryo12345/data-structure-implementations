@@ -11,14 +11,14 @@ export class Queue<T> implements IQueue<T> {
 
   constructor(arr?: T[]) {
     if (arr) {
-      this.values = arr;
+      this.values = [...arr];
     } else {
       this.values = [];
     }
   }
 
   add(value: T): void {
-    this.values.unshift(value);
+    this.values.push(value);
   }
 
   remove(): T | undefined {

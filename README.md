@@ -3,8 +3,7 @@
 Implementing Linked Lists in a different languages.
 
 ## TODO
-- tests for JS stack
-- tests for JS queue
+
 - tests for Java Queue
 - java stack
 - rewrite go linkedlist to return errors instead of panic

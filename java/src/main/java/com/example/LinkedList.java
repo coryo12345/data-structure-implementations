@@ -4,16 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@FunctionalInterface
-interface FormatterFunction<T> {
-    String apply(T value);
-}
+import com.example.common.FormatterFunction;
 
 interface CustomList<T> {
     public Optional<T> get(int index);
+
     public void add(T value);
+
     public Optional<T> remove(int index);
+
     public int size();
+
     public String toString(FormatterFunction<T> formatter);
 }
 

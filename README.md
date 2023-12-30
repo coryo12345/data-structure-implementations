@@ -2,6 +2,19 @@
 
 Implementing Linked Lists in a different languages.
 
+## TODO
+- tests for JS stack
+- tests for JS queue
+- tests for Java Queue
+- java stack
+- rewrite go linkedlist to return errors instead of panic
+- go stack
+- go queue
+- python stack
+- python queue
+- update readme to be data structure agnostic
+- update readme with a table to show languages & data structures
+
 ## Languages
 
 ### Currently Implemented

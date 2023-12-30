@@ -1,5 +1,5 @@
 import { describe, it } from "bun:test";
 
 describe("Stack", () => {
-  it("", () => {});
+  it("stack test 1", () => {});
 });

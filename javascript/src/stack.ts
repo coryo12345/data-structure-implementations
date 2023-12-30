@@ -6,12 +6,13 @@ interface IStack<T> {
   toString(formatter: (value: T) => string): string;
 }
 
+// JS is pretty easy since arrays have built in stack methods
 export class Stack<T> implements IStack<T> {
   private values: T[];
 
   constructor(arr?: T[]) {
     if (arr) {
-      this.values = arr;
+      this.values = [...arr];
     } else {
       this.values = [];
     }

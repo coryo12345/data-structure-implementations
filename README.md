@@ -4,7 +4,6 @@ Implementing Linked Lists in a different languages.
 
 ## TODO
 
-- java stack
 - rewrite go linkedlist to return errors instead of panic
 - go stack
 - go queue

@@ -61,7 +61,7 @@ public class QueueTest extends TestCase {
         assertEquals(queue.remove().isEmpty(), true);
     }
 
-    public void testListToString() {
+    public void testQueueToString() {
         Queue<Struct> queue = new Queue<>(values);
 
         String str = queue.toString((Struct s) -> String.valueOf(s.val));
